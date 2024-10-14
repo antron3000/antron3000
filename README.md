@@ -1,16 +1,14 @@
-## Hi there 👋
+# bitbar-app
 
-<!--
-**antron3000/antron3000** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+A simple web application for managing Bitbars.
 
-Here are some ideas to get you started:
+## Prerequisites
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- You must have [Node.js](https://nodejs.org/) installed on your machine.
+
+## Installation and Setup
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/antron3000/bitbar-app.git
