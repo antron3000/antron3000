@@ -12,3 +12,18 @@ A simple web application for managing Bitbars.
 
    ```bash
    git clone https://github.com/antron3000/bitbar-app.git
+
+
+## Install and Run http-server
+
+1. **Install `http-server` globally** (if not already installed):
+
+   ```bash
+   npm install -g http-server
+
+   ```bash
+   cd /path/to/your/app
+
+   ```bash
+   http-server
+
