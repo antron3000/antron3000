@@ -20,10 +20,13 @@ A simple web application for managing Bitbars.
 
    ```bash
    npm install -g http-server
-
+   ```
    ```bash
    cd /path/to/your/app
-
+   ```
    ```bash
    http-server
-
+   ```
+```bash
+   http-server -p 8081
+```
