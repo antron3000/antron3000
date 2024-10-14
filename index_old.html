@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitbar Minting App</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .svg-container {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .mint-button, .connect-wallet {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+        .wallet-info {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #333;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <button class="connect-wallet">Connect to Wallet</button>
+    <div class="wallet-info"></div>
+</div>
+
+<div class="svg-container">
+    <img src="1kB.svg" alt="Bitbar SVG" width="300px">
+</div>
+
+<button class="mint-button">Mint Bitbar</button>
+
+<script>
+    let connectedAddress = null;
+
+    // Connect to UniSat Wallet extension
+    document.querySelector('.connect-wallet').addEventListener('click', async () => {
+        if (window.unisat) {
+            try {
+                const accounts = await window.unisat.requestAccounts();
+                connectedAddress = accounts[0];  // store the first account address
+                
+                // Display wallet info below the button
+                const walletInfoDiv = document.querySelector('.wallet-info');
+                walletInfoDiv.innerHTML = `Connected Address: ${connectedAddress}`;
+                walletInfoDiv.style.display = 'block';  // Make the wallet info visible
+
+                alert(`Connected to UniSat Wallet: ${connectedAddress}`);
+            } catch (error) {
+                alert('Failed to connect to UniSat Wallet: ' + error.message);
+            }
+        } else {
+            alert('UniSat Wallet extension not found. Please install it.');
+        }
+    });
+
+    // Minting logic
+    document.querySelector('.mint-button').addEventListener('click', () => {
+        if (!connectedAddress) {
+            alert('Please connect to the wallet first.');
+            return;
+        }
+
+        // Logic to mint Bitbar goes here
+        alert(`Minting Bitbar for address: ${connectedAddress}`);
+    });
+</script>
+
+</body>
+</html>
